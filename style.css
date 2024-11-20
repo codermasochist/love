@@ -1,70 +1,138 @@
-/* Фон с градиентом */
-body, html {
+* {
     margin: 0;
     padding: 0;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    box-sizing: border-box;
     font-family: 'Arial', sans-serif;
 }
 
-.background {
-    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb);
-    background-size: 300% 300%;
-    animation: gradient 6s ease infinite;
-    height: 100%;
-    width: 100%;
+body {
+    background: #f7f3f9;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    color: #333;
 }
 
-@keyframes gradient {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+.container {
+    text-align: center;
 }
 
-/* Стиль кнопки */
-.romantic-button {
-    background: #ff6f61;
-    color: #fff;
-    border: none;
-    border-radius: 50px;
-    padding: 15px 40px;
-    font-size: 20px;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s, background 0.3s;
+h1 {
+    font-size: 3rem;
+    color: #d8a0c4;
+    animation: fadeIn 3s ease-in-out;
 }
 
-.romantic-button:hover {
-    transform: scale(1.1);
-    background: #ff8c8c;
-}
-
-/* Анимация имени */
-.hidden {
-    display: none;
-}
-
-#animation {
-    display: flex;
-    gap: 10px;
-    margin-top: 20px;
-}
-
-.name {
-    font-size: 50px;
-    font-weight: bold;
-    color: #ff6f61;
-    animation: sparkle 2s ease forwards;
+.confession {
+    font-size: 1.5rem;
+    color: #b892cc;
+    animation: fadeIn 5s ease-in-out;
     opacity: 0;
+    animation-delay: 2s;
 }
 
-@keyframes sparkle {
-    0% { transform: scale(0); opacity: 0; }
-    50% { transform: scale(1.2); opacity: 1; }
-    100% { transform: scale(1); opacity: 1; }
+.floating-hearts {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.heart {
+    width: 50px;
+    height: 50px;
+    background: #f5a8d4;
+    position: absolute;
+    top: -50px;
+    animation: floatHearts 4s infinite ease-in-out;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.heart:nth-child(1) {
+    left: 20%;
+    animation-duration: 6s;
+}
+
+.heart:nth-child(2) {
+    left: 50%;
+    animation-duration: 7s;
+    animation-delay: 2s;
+}
+
+.heart:nth-child(3) {
+    left: 80%;
+    animation-duration: 5s;
+    animation-delay: 4s;
+}
+
+@keyframes floatHearts {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-30px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.name-section {
+    margin-top: 20%;
+}
+
+#name {
+    font-size: 4rem;
+    color: #f2c6d8;
+    animation: highlightName 3s ease-in-out forwards;
+}
+
+@keyframes highlightName {
+    0% {
+        color: #f2c6d8;
+        opacity: 0;
+    }
+    100% {
+        color: #d8a0c4;
+        opacity: 1;
+    }
+}
+
+.eternal-love {
+    margin-top: 40px;
+    font-size: 1.3rem;
+    color: #f2c6d8;
+    opacity: 0;
+    animation: fadeIn 7s ease-in-out;
+    animation-delay: 6s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://media.giphy.com/media/3o6Zt1KmbU5dvnzmtW/giphy.gif') repeat;
+    z-index: -1;
+    animation: twinkle 10s infinite;
+}
+
+@keyframes twinkle {
+    0% { opacity: 0.8; }
+    50% { opacity: 1; }
+    100% { opacity: 0.8; }
 }
