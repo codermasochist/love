@@ -3,7 +3,7 @@ body, html {
     padding: 0;
     overflow: hidden;
     height: 100%;
-    background: linear-gradient(135deg, #ff9aa2, #ff6f91);
+    background: linear-gradient(135deg, #ffcccc, #ffe6e6);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,8 +26,8 @@ canvas {
 }
 
 .heart {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     background-color: #ff6f91;
     position: relative;
     transform: rotate(45deg);
@@ -37,21 +37,21 @@ canvas {
 .heart::before,
 .heart::after {
     content: '';
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     background-color: #ff6f91;
     position: absolute;
     border-radius: 50%;
 }
 
 .heart::before {
-    top: -100px;
+    top: -75px;
     left: 0;
 }
 
 .heart::after {
     top: 0;
-    left: -100px;
+    left: -75px;
 }
 
 .button {
@@ -64,8 +64,10 @@ canvas {
     border-radius: 5px;
     padding: 10px 20px;
     font-size: 20px;
+    font-weight: bold;
     cursor: pointer;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    color: #ff6f91;
 }
 
 .button:focus {
@@ -84,7 +86,8 @@ canvas {
 .message {
     display: none;
     font-size: 50px;
-    color: white;
+    color: #ff4d6a;
+    text-shadow: 0 0 10px rgba(255, 77, 106, 0.8);
     animation: fadeIn 3s forwards, typing 3s steps(10) 3s;
 }
 
@@ -97,19 +100,10 @@ canvas {
     }
 }
 
-@keyframes typing {
-    from {
-        width: 0;
-    }
-    to {
-        width: 100%;
-    }
-}
-
 .footer {
     position: absolute;
     bottom: 10px;
-    color: white;
+    color: #ff6f91;
     font-size: 14px;
     z-index: 2;
 }
